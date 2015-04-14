@@ -6,5 +6,5 @@
 ### Create JSON
 <img src="http://f.st-hatena.com/images/fotolife/t/tyoshikawa1106/20150414/20150414203458.png" />
 
-### JSON Strign → Map<String, Object>
+### JSON String → Map<String, Object>
 <img src="http://f.st-hatena.com/images/fotolife/t/tyoshikawa1106/20150414/20150414203619.png" />
