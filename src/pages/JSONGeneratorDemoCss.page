@@ -1,0 +1,8 @@
+<apex:page >
+    <style type="text/css">
+        .oppDescription {
+            width: 90%;
+            height: 60px;
+        }
+    </style>
+</apex:page>

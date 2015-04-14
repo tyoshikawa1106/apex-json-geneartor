@@ -1,0 +1,35 @@
+<apex:page controller="JSONGeneratorDemoController" showHeader="true" sidebar="true" tabStyle="Opportunity" id="page">
+    
+    <apex:stylesheet value="{!$Resource.CommonFontFamily}" />
+    <apex:include pageName="JSONGeneratorDemoCss" />
+    
+    <div id="vf-page">
+        <apex:form id="form">
+            <apex:pageBlock mode="edit" id="block">
+                <apex:pageMessages id="msg" />
+                <apex:pageBlockButtons location="bottom" id="button">
+                    <apex:commandButton value=" {!$Label.CreateJSON} " title=" {!$Label.CreateJSON} " action="{!doCreateJSON}" reRender="form" />
+                    <apex:commandButton value=" {!$Label.ClearJSON} " title=" {!$Label.ClearJSON} " action="{!doClearJSON}" reRender="form" />
+                </apex:pageBlockButtons>
+                <apex:pageBlockSection title="JSON Generator" columns="2" id="section">
+                    <apex:inputField value="{!opportunity.Name}" required="false" id="inputName" />
+                    <apex:inputField value="{!opportunity.AccountId}" required="false" id="inputAccountId" />
+                    <apex:inputField value="{!opportunity.IsPrivate}" required="false" id="inputIsPrivate" />
+                    <apex:inputField value="{!opportunity.CloseDate}" required="false" id="inputCloseDate" />
+                    <apex:inputField value="{!opportunity.Amount}" required="false" id="inputAmount" />
+                    <apex:inputField value="{!opportunity.TotalOpportunityQuantity}" required="false" id="inputTotalOpportunityQuantity" />
+                </apex:pageBlockSection>
+                <apex:pageBlockSection columns="1">
+                    <apex:inputField value="{!opportunity.Description}" styleClass="oppDescription" id="inputDescription" />
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+            <apex:pageBlock mode="edit" rendered="{!(jsonStr != '')}" id="resultBlock">
+                <apex:pageBlockSection title="JSON String" columns="1" id="resultSection">
+                    <apex:outputText value="{!jsonStr}" escape="false" />
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+        </apex:form>
+    </div>
+
+    <apex:include pageName="JSONGeneratorDemoScript" />
+</apex:page>
